@@ -8,17 +8,17 @@
 Describe steps for getting setup with the project, i.e. requirements, steps to be done etc.
 * > git clone <url/repo-name>
 * > cd repo-name
-* > npm install
+* > yarn install
 * > etc.
 
 ## Development
 Add steps for getting development running locally
-* > npm run start
+* > yarn start
 * > etc.
 
 ## Build
 Add steps for creating a build
-* > npm run build
+* > yarn build
 * > etc.
 
 ## Deployment
