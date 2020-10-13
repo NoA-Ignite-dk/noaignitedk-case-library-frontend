@@ -1,0 +1,13 @@
+@import '~styles/config';
+
+.highlight {
+    position: relative;
+
+    &__text {
+        position: relative;
+        z-index: 1;
+        font-style: italic;
+        font-weight: bold;
+        color: $color-gold;
+    }
+}
