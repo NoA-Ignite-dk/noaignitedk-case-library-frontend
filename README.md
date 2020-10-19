@@ -101,7 +101,7 @@ Go through this checklist after creating your repository. It should only take a 
 ### `package.json`
 
 - [ ] Have you added tests? Are they matched, here?
-- [ ] Have you added a `lint` command? You should be using either, `tslint` (if using TypeScript), `stylelint` (for styling) and/or `eslint`.
+- [ ] Have you added a `lint` command? You should be using `stylelint` (for styling) and/or `eslint`.
 - [ ] Are you using [Prettier](https://prettier.io/) for code formatting? (recommended)
 - [ ] Have you setup linting/formatting rules corresponding to the ones provided in [Hello Great Works linting rules](https://github.com/Hello-Group/knowledge-base/wiki/Linting-rules)?
 
