@@ -16,7 +16,7 @@ An opionionated template to easily get started with Create Next App.
 Run
 
 ```sh
-git clone https://github.com/Hello-Group/hgw-next-template#main app-name
+git clone git@github.com:Hello-Group/hgw-next-template.git app-name
 ```
 
 ```sh
