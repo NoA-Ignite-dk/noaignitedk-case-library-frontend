@@ -1,10 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import { Intro } from 'components/intro/Intro';
 
 const Other = (): JSX.Element => (
     <>
-        <Helmet title="Other page" />
+        <Head>
+            <title>Other page</title>
+        </Head>
         <Intro>Other page</Intro>
     </>
 );

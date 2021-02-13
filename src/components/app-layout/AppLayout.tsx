@@ -1,11 +1,10 @@
 import React, { ReactNode } from "react";
-import { Helmet } from "react-helmet";
 
 import HGWLogo from "assets/svg/hgw-logo-white.svg";
 import { Header } from "components/header/Header";
 import { HeaderLink } from "components/header-link/HeaderLink";
 import { Footer } from "components/footer/Footer";
-import { helmet } from "utils/helmet";
+import { MetaTags } from "utils/meta";
 import s from "./AppLayout.module.scss";
 
 interface AppLayoutProps {
@@ -14,8 +13,7 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps): JSX.Element => (
     <div className={s.layout}>
-        <Helmet {...helmet} />
-
+        <MetaTags />
         <Header>
             <HeaderLink name="Other page" to="/other" />
         </Header>

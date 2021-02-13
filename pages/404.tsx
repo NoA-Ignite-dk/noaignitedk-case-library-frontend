@@ -1,10 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import { Segment } from 'components/segment/Segment';
 
 const ErrorPage = (): JSX.Element => (
     <>
-        <Helmet title="404 Not Found" />
+        <Head>
+            <title>404 Not Found</title>
+        </Head>
 
         <Segment>
             <h1>Page was not found</h1>

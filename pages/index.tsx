@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import { Intro } from 'components/intro/Intro';
 import { Highlight } from 'components/highlight/Highlight';
 import { Container } from 'components/container/Container';
@@ -7,7 +7,9 @@ import { Button } from 'components/button/Button';
 
 const Index = (): JSX.Element => (
     <>
-        <Helmet title="Home" />
+        <Head>
+            <title>Home</title>
+        </Head>
 
         <Intro>
             Starter for Hello Great Works, using opinionated dependencies:
