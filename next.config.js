@@ -7,6 +7,7 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, "src/styles")],
     },
+    target: 'serverless'
 };
 
 module.exports = plugins(
