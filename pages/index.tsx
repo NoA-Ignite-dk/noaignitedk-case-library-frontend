@@ -8,7 +8,7 @@ import {
   VoiceSearch
 } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const searchClient = algoliasearch('ZY2QYX1R0L', 'e8b08bc3dceb9ccd66698c4defc6a566');
@@ -33,12 +33,15 @@ const Index = (): JSX.Element => (
                 disabledButtonTitle: 'Voice Search Disabled',
               }}
             />
+            <div className="searchbox">
             <SearchBox
-              className="searchbox"
               translations={{
                 placeholder: 'Start your search here',
               }}
             />
+            </div>
+            {/*
+ // @ts-ignore */}
             <Hits hitComponent={Hit}
             />
 
@@ -53,10 +56,11 @@ const Index = (): JSX.Element => (
 
 );
 
-
+{/*
+ // @ts-ignore */}
 const Hit = (props) => {
-  const router = useRouter()
-  const { details } = router.query
+  // const router = useRouter()
+  // const { details } = router.query
 
   return (
     <>
@@ -65,9 +69,9 @@ const Hit = (props) => {
           <h1>
             {props.hit.title}
           </h1>
-          <h2 class="line-height-small" style={{ fontWeight: 700, marginTop: "40px" }}><Highlight attribute="client_name" hit={props.hit} /></h2>
-          <p class="medium-text">{props.hit.short_text}</p>
-          <p class="small-text">
+          <h2 className="line-height-small" style={{ fontWeight: 700, marginTop: "40px" }}><Highlight attribute="client_name" hit={props.hit} /></h2>
+          <p className="medium-text">{props.hit.short_text}</p>
+          <p className="small-text">
             <Highlight attribute="keywords" hit={props.hit} />
           </p>
         </article>

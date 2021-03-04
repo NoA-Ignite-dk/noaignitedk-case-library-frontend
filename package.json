@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/algoliasearch": "^3.34.11",
+    "@types/react-html-parser": "^2.0.1",
     "@types/react-instantsearch-dom": "^6.8.0",
     "algoliasearch": "3.35.1",
     "next": "^10.0.6",
