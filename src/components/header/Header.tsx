@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 import { Link } from "components/link/Link";
-import HGWLogo from "assets/svg/hgw-logo-white.svg";
+import HGWLogo from "assets/svg/noaignite-logo.svg";
 
 import s from "./Header.module.scss";
 

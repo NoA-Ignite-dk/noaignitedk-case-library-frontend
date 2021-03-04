@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import HGWLogo from "assets/svg/hgw-logo-white.svg";
+import HGWLogo from "assets/svg/noaignite-logo.svg";
 import { Header } from "components/header/Header";
 import { HeaderLink } from "components/header-link/HeaderLink";
 import { Footer } from "components/footer/Footer";

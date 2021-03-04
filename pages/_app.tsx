@@ -3,7 +3,9 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 
 import "styles/base.scss";
+import "styles/algolia-min.css"
 import AppLayout from "components/app-layout/AppLayout";
+
 
 const Layout = ({ Component, pageProps }: AppProps) => (
     <AppLayout>

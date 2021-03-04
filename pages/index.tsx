@@ -1,35 +1,87 @@
-import React from 'react';
-import Head from 'next/head';
-import { Intro } from 'components/intro/Intro';
-import { Highlight } from 'components/highlight/Highlight';
-import { Container } from 'components/container/Container';
-import { Button } from 'components/button/Button';
+import React, { Component } from 'react';
+import algoliasearch from 'algoliasearch/lite';
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Pagination,
+  Highlight,
+  VoiceSearch
+} from 'react-instantsearch-dom';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Logo from "../src/assets/images/noa.png"
+
+const searchClient = algoliasearch('ZY2QYX1R0L', 'e8b08bc3dceb9ccd66698c4defc6a566');
 
 const Index = (): JSX.Element => (
-    <>
-        <Head>
-            <title>Home</title>
-        </Head>
 
-        <Intro>
-            Starter for Hello Great Works, using opinionated dependencies:
-            <br />
-            <Highlight>TypeScript</Highlight>, <Highlight>SCSS</Highlight>, <Highlight>CSS Modules</Highlight>,{' '}
-            <Highlight>root resolver</Highlight> &amp; some love.
-            <br />
-            <br />
-            <Button href="https://github.com/Hello-Group/hgw-next-template">GitHub</Button>
-        </Intro>
+  <div>
+    {/* <header className="header">
+      <div className="container">
+      </div>
+    </header> */}
 
-        <Container>
-            <br />
-            Based on CRA starter by{' '}
-            <a href="https://github.com/ueno-llc/ueno-cra-starter" target="_blank" rel="noopener noreferrer">
-                Ueno
-            </a>
-            .
-        </Container>
-    </>
+    <div className="container">
+      <InstantSearch searchClient={searchClient} indexName="dev_cases">
+        <div className="search-panel">
+          <div className="search-panel__results">
+            <VoiceSearch
+              // Optional parameters
+              searchAsYouSpeak={true}
+              translations={{
+                buttonTitle: 'Voice Search',
+                disabledButtonTitle: 'Voice Search Disabled',
+              }}
+            />
+            <SearchBox
+              className="searchbox"
+              translations={{
+                placeholder: 'Start your search here',
+              }}
+            />
+            <Hits hitComponent={Hit}
+            />
+
+            <div className="pagination">
+              <Pagination />
+            </div>
+          </div>
+        </div>
+      </InstantSearch>
+    </div>
+  </div>
+
 );
+
+
+const Hit = (props) => {
+  const router = useRouter()
+  const { details } = router.query
+
+  return (
+    <>
+      <Link href="/post/[details]" as={`/post/${props.hit.objectID}`}>
+        <article>
+          <h1>
+            {props.hit.title}
+          </h1>
+          <h2 class="line-height-small" style={{ fontWeight: 700, marginTop: "40px" }}><Highlight attribute="client_name" hit={props.hit} /></h2>
+          <p class="medium-text">{props.hit.short_text}</p>
+          <p class="small-text">
+            <Highlight attribute="keywords" hit={props.hit} />
+          </p>
+        </article>
+      </Link>
+    </>
+  );
+}
+
+
+Hit.propTypes = {
+  hit: PropTypes.object.isRequired,
+};
+
 
 export default Index;
