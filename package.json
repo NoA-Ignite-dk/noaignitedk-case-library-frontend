@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
-    "build": "yarn build",
-    "start": "yarn start",
+    "build": "next build",
+    "start": "next start",
     "type-check": "tsc"
   },
   "dependencies": {
