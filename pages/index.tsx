@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
@@ -11,7 +10,6 @@ import {
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Logo from "../src/assets/images/noa.png"
 
 const searchClient = algoliasearch('ZY2QYX1R0L', 'e8b08bc3dceb9ccd66698c4defc6a566');
 
