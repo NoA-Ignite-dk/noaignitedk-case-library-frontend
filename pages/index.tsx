@@ -66,11 +66,12 @@ const Hit = (props) => {
     <>
       <Link href="/post/[details]" as={`/post/${props.hit.objectID}`}>
         <article>
-          <h1>
+        <h1 style={{ fontWeight: 700}}><Highlight attribute="client_name" hit={props.hit} /></h1>
+          <h1 style={{fontSize:"20px", fontWeight:700}}>
             {props.hit.title}
           </h1>
-          <h2 className="line-height-small" style={{ fontWeight: 700, marginTop: "40px" }}><Highlight attribute="client_name" hit={props.hit} /></h2>
           <p className="medium-text">{props.hit.short_text}</p>
+          <div className="test"></div>
           <p className="small-text">
             <Highlight attribute="keywords" hit={props.hit} />
           </p>

@@ -172,97 +172,72 @@ em {
   input {
     height: 6rem;
   }
-  .ais-SearchBox-input {
-    border: 1px solid rgb(151, 151, 151);
-    border-radius: 0;
+
+  .ais-SearchBox-form {
     font-size: 30px;
-  }
-  .ais-Hits-item h1 {
-    font-weight: 400;
-  }
-  .ais-Hits-item h2 {
-    font-weight: 400;
-    font-size: 18px;
   }
   .ais-Hits-item, .ais-InfiniteHits-item, .ais-InfiniteResults-item, .ais-Results-item {
     margin-left: 0 !important;
     box-shadow: none !important;
-    width: calc(33.33333%) !important;
+    width: 33.333333% !important;
     border: none !important;
     margin-top: 0 !important;
+    display: inline-block;
+    @media (max-width: 1000px){
+        width: 50% !important;
+    }
+    @media (max-width: 550px){
+        width: 100% !important;
+    }
     
   }
-  
-  .ais-Hits-item:nth-child(4n+1) {
-  
-    background-color: #aad4cf;
+  .ais-Hits-item::before {
+        content: "";
+	  display: block;
+	  padding-top: 16.66666%;
+
   }
-  .ais-Hits-item:nth-child(4n+2) {
-  
-    background-color: #fefce4;
+  .test {
+    content: "";
+  display: block;
+  padding-top: 16.66666%;
+
+}
+  @media screen and (min-width: 550px) and (max-width: 1000px){
+    .ais-Hits-item:nth-child(4n+1) {
+        background-color: #ccdfdd !important;
+      }
+    .ais-Hits-item:nth-child(4n+2) {
+        background-color: #dad0c7 !important;
+      }
+    .ais-Hits-item:nth-child(4n+3) {
+        background-color: #dad0c7 !important;
+      }
+    .ais-Hits-item:nth-child(4n+4) {
+        background-color: #ccdfdd !important;
+      }
   }
-  .ais-Hits-item:nth-child(4n+3) {
   
-    background-color: #dee2e2;
+  .ais-Hits-item:nth-child(2n+1) {
+    background-color: #ccdfdd;
   }
-  .ais-Hits-item:nth-child(4n+4) {
-  
-    background-color: #d4b0c7;
+  .ais-Hits-item:nth-child(2n+2) {
+    background-color: #dad0c7;
   }
-  
-  
+    
   .ais-Hits-list, .ais-InfiniteHits-list, .ais-InfiniteResults-list, .ais-Results-list {
   
     margin-left: 0;
   }
-  /* .ais-Highlight-nonHighlighted {
-    background: #eee;
-    border-radius: 3px 0 0 3px;
-    color: #999;
-    display: inline-block;
-    height: 26px;
-    line-height: 26px;
-    padding: 0 15px 0 15px;
-    position: relative;
-    margin: 0 10px 10px 0;
-    text-decoration: none;
-    -webkit-transition: color 0.2s;
-  }
+//   .ais-Hits-item:nth-child(2n+1) .ais-Highlight .ais-Highlight-nonHighlighted::after {
+//     background-color: #ccdfdd;
   
+//   }
+//   .ais-Hits-item:nth-child(2n+2) .ais-Highlight .ais-Highlight-nonHighlighted::after {
+//     background-color: #dad0c7;
   
-  .ais-Highlight-nonHighlighted::after {
-    background: #fff;
-    border-bottom: 13px solid transparent;
-    border-left: 10px solid #eee;
-    border-top: 13px solid transparent;
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-  
-  } */
-  .ais-Hits-item:nth-child(4n+1) .ais-Highlight .ais-Highlight-nonHighlighted::after {
-    background-color: #aad4cf;
-  
-  }
-  .ais-Hits-item:nth-child(4n+2) .ais-Highlight .ais-Highlight-nonHighlighted::after {
-    background-color: #fefce4;
-  
-  }
-  .ais-Hits-item:nth-child(4n+3) .ais-Highlight .ais-Highlight-nonHighlighted::after {
-    background-color: #dee2e2;
-  
-  }
-  .ais-Hits-item:nth-child(4n+4) .ais-Highlight .ais-Highlight-nonHighlighted::after {
-    background-color: #d4b0c7;
-  
-  }
-  /* .no-styling .ais-Highlight-nonHighlighted {
-    all:revert;
-  }
-  .no-styling .ais-Highlight-nonHighlighted::after {
-    all:revert;
-  } */
+//   }
+
   .ais-Highlight-separator {
     
     visibility: hidden;
@@ -295,6 +270,7 @@ em {
     background-color: #fff;
     border: 1px solid #c4c8d8;
     border-radius: 5px;
+    font-size: 50px !important;
 }
 .ais-SearchBox-submit {
     left: .3rem;
@@ -333,6 +309,17 @@ b {
 }
 .ais-Hits-item:hover, .ais-Hits-item:focus, .ais-Hits-item:active {
     -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  transform: scale(1.05);
+  z-index: 100000;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  
 
+}
+
+h1 .ais-Highlight-nonHighlighted {
+    font-size: 40px;
+    
+}
+h1 em.ais-Highlight-highlighted {
+    font-size: 40px;
 }
