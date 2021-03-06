@@ -15,12 +15,10 @@ const AppLayout = ({ children }: AppLayoutProps): JSX.Element => (
     <div className={s.layout}>
         <MetaTags />
         <Header>
-            <HeaderLink name="Other page" to="/other" />
+            <HeaderLink name="Create new case" to="/form" />
         </Header>
 
         {children}
-
-        <Footer logo={<HGWLogo />} />
     </div>
 );
 

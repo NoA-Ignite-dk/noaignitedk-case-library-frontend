@@ -3,7 +3,7 @@
 .header {
     display: block;
     background-color: white;
-
+    color:black;
     &__container {
         @include container;
     }

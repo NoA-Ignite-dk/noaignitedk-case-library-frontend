@@ -14,13 +14,9 @@ import Link from 'next/link'
 const searchClient = algoliasearch('ZY2QYX1R0L', 'e8b08bc3dceb9ccd66698c4defc6a566');
 
 const Index = (): JSX.Element => (
+  <>
 
   <div>
-    {/* <header className="header">
-      <div className="container">
-      </div>
-    </header> */}
-
     <div className="container">
       <InstantSearch searchClient={searchClient} indexName="dev_cases">
         <div className="search-panel">
@@ -44,7 +40,6 @@ const Index = (): JSX.Element => (
  // @ts-ignore */}
             <Hits hitComponent={Hit}
             />
-
             <div className="pagination">
               <Pagination />
             </div>
@@ -53,15 +48,12 @@ const Index = (): JSX.Element => (
       </InstantSearch>
     </div>
   </div>
-
+  </>
 );
 
 {/*
  // @ts-ignore */}
 const Hit = (props) => {
-  // const router = useRouter()
-  // const { details } = router.query
-
   return (
     <>
       <Link href="/post/[details]" as={`/post/${props.hit.objectID}`}>
@@ -80,8 +72,6 @@ const Hit = (props) => {
     </>
   );
 }
-
-
 Hit.propTypes = {
   hit: PropTypes.object.isRequired,
 };
