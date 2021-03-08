@@ -323,3 +323,11 @@ h1 .ais-Highlight-nonHighlighted {
 h1 em.ais-Highlight-highlighted {
     font-size: 40px;
 }
+
+.ais-Hits-item {
+  position: relative;
+}
+.small-text {
+  position: absolute;
+  bottom: 5%;
+}
