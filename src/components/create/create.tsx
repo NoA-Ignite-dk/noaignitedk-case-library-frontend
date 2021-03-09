@@ -110,9 +110,8 @@ export const Create = () => {
             value={inputValue}
           />
           <div className={s.sameWidth}>
-            {/*
- // @ts-ignore */}
-          <DefaultEditor value={inputValue} onChange={e => setValue(e.target.value)}/>
+ 
+          <DefaultEditor value={inputValue} onChange={e => setValue((e.target as HTMLTextAreaElement).value)}/>
           </div>
           {errors.long_text && errors.long_text.type === "required" && (
           <div className={s.error}>You must enter your long text.</div>

@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types';
 // import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { FunctionComponent } from 'react';
 
 const searchClient = algoliasearch('ZY2QYX1R0L', 'e8b08bc3dceb9ccd66698c4defc6a566');
 
@@ -24,9 +25,10 @@ const Index = (): JSX.Element => (
             <VoiceSearch
               // Optional parameters
               searchAsYouSpeak={true}
+              queryLanguages={['da','en']}
               translations={{
                 buttonTitle: 'Voice Search',
-                disabledButtonTitle: 'Voice Search Disabled',
+                disabledButtonTitle: 'Voice Search Disabled'
               }}
             />
             <div className="searchbox">
@@ -36,8 +38,6 @@ const Index = (): JSX.Element => (
               }}
             />
             </div>
-            {/*
- // @ts-ignore */}
             <Hits hitComponent={Hit}
             />
             <div className="pagination">
@@ -51,9 +51,8 @@ const Index = (): JSX.Element => (
   </>
 );
 
-{/*
- // @ts-ignore */}
-const Hit = (props) => {
+
+const Hit: FunctionComponent = (props:any) => {
   return (
     <>
       <Link href="/post/[details]" as={`/post/${props.hit.objectID}`}>
